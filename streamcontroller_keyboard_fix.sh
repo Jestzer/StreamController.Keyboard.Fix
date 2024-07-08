@@ -8,7 +8,7 @@ while [ $ATTEMPT -le $MAX_ATTEMPTS ]; do
 
     # Get the device IDs for "stream-controller-os-plugin" under Virtual core keyboard section.
     # Finding it in the wrong section can screw up other things, like settings your physical keyboard layout to US.
-    S_DEVICE_IDS=$(xinput -list | grep -A 10 'Virtual core keyboard' | grep 'stream-controller-os-plugin' | sed -n 's/.*id=\([0-9]*\).*/\1/p')
+    S_DEVICE_IDS=$(xinput -list | grep -A 20 'Virtual core keyboard' | grep 'stream-controller-os-plugin' | sed -n 's/.*id=\([0-9]*\).*/\1/p')
     
     echo "Found Stream Deck device IDs: $S_DEVICE_IDS"
 
